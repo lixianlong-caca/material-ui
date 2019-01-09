@@ -17,6 +17,9 @@ const styles = theme => ({
   table: {
     minWidth: 700,
   },
+  name: {
+    width: '50%'
+  }
 });
 
 let id = 0;
@@ -41,7 +44,7 @@ function SimpleTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell className={classes.name}>Dessert (100g serving)</TableCell>
             <TableCell align="right">Calories</TableCell>
             <TableCell align="right">Fat (g)</TableCell>
             <TableCell align="right">Carbs (g)</TableCell>
@@ -52,7 +55,7 @@ function SimpleTable(props) {
           {rows.map(row => {
             return (
               <TableRow key={row.id}>
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" className={classes.name}>
                   {row.name}
                 </TableCell>
                 <TableCell align="right">{row.calories}</TableCell>
